@@ -10,7 +10,8 @@
   },
   "devDependencies": {
     "jest": "^26.4.1",
-    "wsrun": "^5.2.1"
+    "wsrun": "^5.2.1",
+    "nodemon": "^2.0.4"
   },
   "workspaces": [
     "packages/app",
