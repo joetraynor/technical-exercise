@@ -1,0 +1,19 @@
+{
+  "name": "react-fun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "wsrun --parallel start",
+    "test": "wsrun --parallel test"
+  },
+  "devDependencies": {
+    "jest": "^26.4.1",
+    "wsrun": "^5.2.1"
+  },
+  "workspaces": [
+    "packages/app",
+    "packages/api"
+  ]
+}
