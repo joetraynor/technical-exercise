@@ -25,6 +25,11 @@ button {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+img {
+  height: 6em;
+  margin: 1em;
+}
+
 .MessageText {
   font-weight: bold;
 }

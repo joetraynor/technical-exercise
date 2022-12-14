@@ -12,8 +12,9 @@ const App = _ => {
   const request = async () => {
     setState({ ...state })
     setLoading(true)
-    const response = await fetch('/api')
+    const response = await fetch(`/api`)
     const data = await response.json()
+    // TODO: add error handing for api request
     setState({ data })
     setLoading(false)
   }

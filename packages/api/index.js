@@ -2,13 +2,16 @@
 import express from 'express'
 import fetch from 'node-fetch';
 import moment from 'moment'
+import dotenv from 'dotenv'
+dotenv.config({path: './.env'})
 
 const server = express()
   .get('/api', (req, res) => {
-    fetch('https://api.github.com/repositories/44838949/commits?per_page=100&sha=f45309246584ebdbc0cd6f4960c3f2103ff76a76')
+    // i have pushed the .env file for the sake of the exercise, however in reality this would be excluded
+    fetch(process.env.API_URL)
       .then(res => res.json())
       .then(response => {
-        const newArray = response.map(obj => {
+        const reducedCommit = response.map(obj => {
           const commit = obj.commit
           return {
             name: commit.author.name,
@@ -16,9 +19,13 @@ const server = express()
             message: commit.message
           }
         })
-        res.send(newArray)
+        res.send(reducedCommit)
       })
-      .catch(err => console.error('error:' + err))
+      .catch(err => {
+        // improve error handling
+        res.status(500)
+        res.render('Error', {error: err})
+      })
   })
   .listen('3001', () => {
     console.log('api listening', server.address())
