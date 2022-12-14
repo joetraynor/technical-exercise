@@ -1,7 +1,7 @@
 // const express = require('express')
 import express from 'express'
 import fetch from 'node-fetch';
-import 'dotenv'
+import moment from 'moment'
 
 const server = express()
   .get('/api', (req, res) => {
@@ -12,7 +12,7 @@ const server = express()
           const commit = obj.commit
           return {
             name: commit.author.name,
-            date: commit.author.date,
+            date: moment(commit.author.date).format('MMMM Do YYYY, h:mm:ss a'),
             message: commit.message
           }
         })

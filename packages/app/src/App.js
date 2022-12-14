@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css';
 import Commit from './Commit';
 
-const App = (props) => {
+const App = _ => {
   const [state, setState] = useState({
     data: [],
     error: false,
@@ -19,11 +19,10 @@ const App = (props) => {
   }
 
   return(
-    <div>
-      <button onClick={request}>Request GitHub data</button>
-      {isLoading && <img src='spinner.gif' />}
+    <div className='App'>
+      {isLoading ? <img src='spinner.gif' /> : <button onClick={request}>Request GitHub data</button>}
       {state.data.map(com => {
-        return <Commit key={com.date} name={com.name} data={com.date} message={com.message}/>
+        return <Commit key={com.date} name={com.name} date={com.date} message={com.message}/>
       })}
     </div>
   )

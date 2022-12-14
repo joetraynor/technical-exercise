@@ -1,5 +1,36 @@
 .App {
-  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.Commit {
+  width:80%;
+  border: 1px black solid;
+  border-radius: 1em;
+  padding: 1em;
+  justify-content: left;
+  background-color: lightblue;
+  margin: 1em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+  color: white;
+  background-color: blue;
+  border-radius: 20px;
+  border: black 2px solid;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 1em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.MessageText {
+  font-weight: bold;
+}
+
+.MessageDetails {
+  font-size: 0.8em;
 }
 
 .App-logo {
